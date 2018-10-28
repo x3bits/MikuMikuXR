@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 1683cfa592c8b4a18babb881e6a1064e
+timeCreated: 1502627204
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: WenQuanYi Micro Hei Mono
+  fontNames:
+  - WenQuanYi Micro Hei Mono
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
