@@ -1,6 +1,6 @@
 # MikuMikuXR
 
-MikuMikuXR is a MikuMikuDance player powered by [libmmd-for-unity](#https://github.com/x3bits/libmmd-for-unity), which supports VR glass, AR camera and holographic pyramid.
+MikuMikuXR is a MikuMikuDance player powered by [libmmd-for-unity](https://github.com/x3bits/libmmd-for-unity), which supports VR glass, AR camera and holographic pyramid.
 This application is developed by unity. It works on Android. It has not been test on other platform yet.
 
 ## License
