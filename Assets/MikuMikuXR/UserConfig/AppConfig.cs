@@ -25,7 +25,7 @@ namespace MikuMikuXR.UserConfig
         }
 
         public static long VersionCode {
-            get { return 20181008000L; }
+            get { return 20181118000L; }
         }
     }
 }
