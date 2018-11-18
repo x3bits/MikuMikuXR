@@ -627,7 +627,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114433441434168618}
   m_HandleRect: {fileID: 224804072855631162}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -758,7 +758,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5E94\u7528\u540D\u79F0\uFF1A\u672A\u6765XR\n\u8F6F\u4EF6\u5236\u4F5C\uFF1Ax3bits\n\u4F5C\u8005\u90AE\u7BB1\uFF1Amikumikuar@126.com\nMikuMikuDance\u539F\u7248\u8F6F\u4EF6\uFF1A\u6A0B\u53E3\u4F18\n\n\u5F00\u653E\u6E90\u4EE3\u7801\u8BB8\u53EF\uFF1A\nhttps://github.com/x3bits/MikuMikuXR\n"
+  m_Text: "\u5E94\u7528\u540D\u79F0\uFF1AMikuMikuXR\n\u8F6F\u4EF6\u5236\u4F5C\uFF1Ax3bits\n\u4F5C\u8005\u90AE\u7BB1\uFF1Amikumikuar@126.com\nMikuMikuDance\u539F\u7248\u8F6F\u4EF6\uFF1A\u6A0B\u53E3\u4F18\n\n\u5F00\u653E\u6E90\u4EE3\u7801\u8BB8\u53EF\uFF1A\nhttps://github.com/x3bits/MikuMikuXR\n"
 --- !u!114 &114961477313424186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -916,7 +916,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00014244311}
+  m_AnchoredPosition: {x: 0, y: 0.0000016200801}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224164901478548568
