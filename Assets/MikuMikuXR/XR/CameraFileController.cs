@@ -1,7 +1,9 @@
-﻿using LibMMD.Unity3D;
+﻿using System;
+using LibMMD.Unity3D;
 using MikuMikuXR.SceneController;
 using UnityEngine;
 using UnityEngine.Events;
+using Object = UnityEngine.Object;
 
 namespace MikuMikuXR.XR
 {
@@ -30,7 +32,14 @@ namespace MikuMikuXR.XR
             MainSceneController.Instance.OnPlayPause.AddListener(_playPauseListener);
             MainSceneController.Instance.ResetAll();
             MainSceneController.Instance.OnResetAll.AddListener(_resetAllListener);
-            CameraObject.LoadCameraMotion(MainSceneController.Instance.CameraFilePath);
+            try
+            {
+                CameraObject.LoadCameraMotion(MainSceneController.Instance.CameraFilePath);
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
         }
 
         public void Destroy()

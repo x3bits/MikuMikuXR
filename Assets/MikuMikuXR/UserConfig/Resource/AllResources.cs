@@ -1,4 +1,6 @@
-﻿namespace MikuMikuXR.UserConfig.Resource
+﻿using System.Collections.Generic;
+
+namespace MikuMikuXR.UserConfig.Resource
 {
     public class AllResources
     {

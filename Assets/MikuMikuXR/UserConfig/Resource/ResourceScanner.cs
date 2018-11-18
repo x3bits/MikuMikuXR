@@ -103,15 +103,15 @@ namespace MikuMikuXR.UserConfig.Resource
                     ext = ext.ToLower();
                 }
                 var fileName = System.IO.Path.GetFileName(file);
-                if (".pmd".Equals(ext) || ".pmx".Equals(ext))
+                if (Constants.ModelExts.Contains(ext))
                 {
                     allResources.ModelList.List.Add(new ResourceInfo {FilePath = file, Title = fileName});
                 }
-                else if (".vmd".Equals(ext))
+                else if (Constants.MotionExts.Contains(ext))
                 {
                     allResources.MotionList.List.Add(new ResourceInfo {FilePath = file, Title = fileName});
                 }
-                else if (".mp3".Equals(ext) || ".m4a".Equals(ext) || ".ogg".Equals(ext) || ".wav".Equals(ext))
+                else if (Constants.MusicExts.Contains(ext))
                 {
                     allResources.MusicList.List.Add(new ResourceInfo {FilePath = file, Title = fileName});
                 }

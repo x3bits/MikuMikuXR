@@ -7,6 +7,7 @@ namespace MikuMikuXR.UI.Resource
         private static Sprite _fileIconModel;
         private static Sprite _fileIconMotion;
         private static Sprite _fileIconMusic;
+        private static Sprite _fileIconDirectory;
 
         public static Sprite FileIconModel
         {
@@ -21,6 +22,11 @@ namespace MikuMikuXR.UI.Resource
         public static Sprite FileIconMusic
         {
             get { return LoadSprite(ref _fileIconMusic, "UI/Images/music_file"); }
+        }
+        
+        public static Sprite FileIconDirectory
+        {
+            get { return LoadSprite(ref _fileIconDirectory, "UI/Images/directory"); }
         }
 
         private static Sprite LoadSprite(ref Sprite sprite, string resourcePath)
