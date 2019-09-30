@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-using Vuforia;
+//using Vuforia;
 using Object = UnityEngine.Object;
 
 namespace MikuMikuXR.XR
@@ -12,7 +12,6 @@ namespace MikuMikuXR.XR
         
         private GameObject _arCameraObject;
         private GameObject _targetBuilderObject;
-        private UdtEventHandler _udtEventHandler;
 
         public ArUserDefinedController()
         {
@@ -34,12 +33,10 @@ namespace MikuMikuXR.XR
                 throw new InvalidOperationException("[Bug] vuforia object is null");
             }
             _vuforiaObject.name = "ArUserDefined";
-            _udtEventHandler = _vuforiaObject.transform.Find("UserDefinedTargetBuilder").GetComponent<UdtEventHandler>();
         }
 
         public void Destroy()
         {
-            ClearTargets();
             Object.Destroy(_vuforiaObject);
         }
 
@@ -51,27 +48,6 @@ namespace MikuMikuXR.XR
         public bool EnableGesture()
         {
             return false;
-        }
-
-        public bool BuildTarget()
-        {
-            if (Tracking)
-            {
-                return false;
-            }
-            var buildSuccess = _udtEventHandler.BuildNewTarget();
-            Tracking = buildSuccess;
-            return buildSuccess;
-        }
-
-        public void ClearTargets()
-        {
-            if (!Tracking)
-            {
-                return;
-            }
-            _udtEventHandler.ClearTargets();
-            Tracking = false;
         }
     }
 }

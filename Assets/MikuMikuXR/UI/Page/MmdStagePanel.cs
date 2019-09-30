@@ -4,7 +4,7 @@ using MikuMikuXR.Utils;
 using MikuMikuXR.XR;
 using UnityEngine;
 using UnityEngine.UI;
-using Vuforia;
+//using Vuforia;
 
 namespace MikuMikuXR.UI.Page
 {
@@ -14,7 +14,6 @@ namespace MikuMikuXR.UI.Page
         private GameObject _arUserDefinedPanel;
         private GameObject _arUserDefinedInitPanel;
         private GameObject _arUserDefinedResetPanel;
-        private Text _frameQualityText;
 
         public MmdStagePanel()
         {
@@ -27,7 +26,6 @@ namespace MikuMikuXR.UI.Page
             _arUserDefinedPanel = transform.Find("ArUserDefined").gameObject;
             _arUserDefinedInitPanel = transform.Find("ArUserDefined/Init").gameObject;
             _arUserDefinedResetPanel = transform.Find("ArUserDefined/Reset").gameObject;
-            _frameQualityText = transform.Find("ArUserDefined/Init/FrameQuality").GetComponent<Text>();
             MainSceneController.Instance.OnXrTypeChanged.AddListener(xrType =>
             {
                 _cameraFilePanel.SetActive(xrType == XrType.CameraFile);
@@ -38,7 +36,7 @@ namespace MikuMikuXR.UI.Page
                     _arUserDefinedResetPanel.SetActive(false);
                 }
             });
-            MainSceneController.Instance.OnArFrameQualityChanged.AddListener(OnQualityChanged);
+
             SetButtonListener("Functions/BtnAddModel", () =>
             {
                 ShowPage<MmdFileSelector>(new MmdFileSelector.Context
@@ -165,7 +163,6 @@ namespace MikuMikuXR.UI.Page
             {
                 var arController = MainSceneController.Instance.GetXrController() as ArUserDefinedController;
                 if (arController == null) return;
-                if (!arController.BuildTarget()) return;
                 _arUserDefinedInitPanel.SetActive(false);
                 _arUserDefinedResetPanel.SetActive(true);
             });
@@ -173,36 +170,9 @@ namespace MikuMikuXR.UI.Page
             {
                 var arController = MainSceneController.Instance.GetXrController() as ArUserDefinedController;
                 if (arController == null) return;
-                arController.ClearTargets();
                 _arUserDefinedInitPanel.SetActive(true);
                 _arUserDefinedResetPanel.SetActive(false);
             });
-        }
-
-        private void OnQualityChanged(ImageTargetBuilder.FrameQuality quality)
-        {
-            if (_frameQualityText.IsDestroyed())
-            {
-                return;
-            }
-            switch (quality)
-            {
-                case ImageTargetBuilder.FrameQuality.FRAME_QUALITY_NONE:
-                case ImageTargetBuilder.FrameQuality.FRAME_QUALITY_LOW:
-                    _frameQualityText.text = "识别度：低";
-                    _frameQualityText.color = Color.red;
-                    break;
-                case ImageTargetBuilder.FrameQuality.FRAME_QUALITY_MEDIUM:
-                    _frameQualityText.text = "识别度：中";
-                    _frameQualityText.color = Color.yellow;
-                    break;
-                case ImageTargetBuilder.FrameQuality.FRAME_QUALITY_HIGH:
-                    _frameQualityText.text = "识别度：高";
-                    _frameQualityText.color = Color.green;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException("quality", quality, null);
-            }
         }
 
         private static void ShowAddModelFailTip()

@@ -18,7 +18,7 @@ using TinyTeam.UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using Vuforia;
+//using Vuforia;
 using Object = UnityEngine.Object;
 
 namespace MikuMikuXR.SceneController
@@ -37,10 +37,6 @@ namespace MikuMikuXR.SceneController
         {
         }
 
-        public class ArFrameQualityChangedEvent : UnityEvent<ImageTargetBuilder.FrameQuality>
-        {
-        }
-
         public DelayInactive DotMark;
 
         public readonly XrTypeChangeEvent OnXrTypeChanged = new XrTypeChangeEvent();
@@ -48,8 +44,6 @@ namespace MikuMikuXR.SceneController
         public readonly PlayPauseEvent OnPlayPause = new PlayPauseEvent();
 
         public readonly ResetAllEvent OnResetAll = new ResetAllEvent();
-
-        public readonly ArFrameQualityChangedEvent OnArFrameQualityChanged = new ArFrameQualityChangedEvent();
 
         public string CameraFilePath { get; set; }
 
