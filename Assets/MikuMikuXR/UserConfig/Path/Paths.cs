@@ -9,7 +9,7 @@ namespace MikuMikuXR.UserConfig.Path
         private static readonly IPathGetter PathGetter;
 
         private static bool _directoryCreated;
-        
+
         static Paths()
         {
             switch (Application.platform)
@@ -21,6 +21,9 @@ namespace MikuMikuXR.UserConfig.Path
                     PathGetter = new IosPathGetter();
                     break;
                 case RuntimePlatform.OSXEditor:
+                    PathGetter = new MacEditorPathGetter();
+                    break;
+                case RuntimePlatform.WindowsEditor:
                     PathGetter = new MacEditorPathGetter();
                     break;
                 default:
